@@ -106,6 +106,7 @@ def train():
             src2_train_iter_fake = iter(src2_train_dataloader_fake)
         if (iter_num != 0 and iter_num % iter_per_epoch == 0):
             epoch = epoch + 1
+            
         param_lr_tmp = []
         for param_group in optimizer.param_groups:
             param_lr_tmp.append(param_group["lr"])

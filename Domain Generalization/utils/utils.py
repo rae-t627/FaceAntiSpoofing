@@ -23,7 +23,8 @@ def adjust_learning_rate(optimizer, epoch, init_param_lr, lr_epoch_1, lr_epoch_2
         else:
             param_group['lr'] = init_lr * 0.1 ** 2
 
-def draw_roc(frr_list, far_list, roc_auc):
+def draw_roc(
+    frr_list, far_list, roc_auc):
     '''
         Draw the ROC curve
     '''
@@ -116,7 +117,7 @@ def get_points(dataset_name, num_points, flag):
                 image_name = all_label_json[i]['photo_path'].split('/')[-2]
                 dict['photo_belong_to_video_ID'] = extract_client_number(image_name)
                 
-            elif dataset_name == 'nuua':
+            elif dataset_name == 'nuaa':
                 image_name = all_label_json[i]['photo_path'].split('/')[-2]
                 dict['photo_belong_to_video_ID'] = int(image_name)
                 
@@ -170,7 +171,7 @@ def accuracy(output, target, topk=(1,)):
         # Round target to the nearest integer
         target = target.round()        
         _, pred = output.topk(maxk, 1, True, True)
-        pred = pred.t()
+        # pred = pred.t()
         correct = pred.eq(target.expand_as(pred))
         res = []
         for k in topk:

@@ -1,0 +1,391 @@
+(base) [01;32meeiith@eeiith[00m:[01;34m~/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/experiment/backbone_classifier/L_R_N[00m$ cd ../
+(base) [01;32meeiith@eeiith[00m:[01;34m~/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/experiment/backbone_classifier[00m$ conda activate KG
+(KG) [01;32meeiith@eeiith[00m:[01;34m~/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/experiment/backbone_classifier[00m$ python3 train_resnet.py 
+Load Source Data
+Source Data:  lcc_fasd
+label_path:  ../../data_label/lcc_fasd/fake_label_crop.json
+save_label_path:  ../../data_label/lcc_fasd/choose_fake_label_crop.json
+Total video number(fake):  14756 lcc_fasd
+label_path:  ../../data_label/lcc_fasd/real_label_crop.json
+save_label_path:  ../../data_label/lcc_fasd/choose_real_label_crop.json
+Total video number(real):  1625 lcc_fasd
+Source Data:  replay_attack
+label_path:  ../../data_label/replay_attack/fake_label_crop.json
+save_label_path:  ../../data_label/replay_attack/choose_fake_label_crop.json
+Total video number(fake):  9000 replay_attack
+label_path:  ../../data_label/replay_attack/real_label_crop.json
+save_label_path:  ../../data_label/replay_attack/choose_real_label_crop.json
+Total video number(real):  3000 replay_attack
+Load Target Data
+Target Data:  nuaa
+label_path:  ../../data_label/nuaa/test_label_crop.json
+save_label_path:  ../../data_label/nuaa/choose_test_label_crop.json
+Total video number(test):  9123 nuaa
+loading model:  /home/eeiith/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/pretrained_model/resnet18-5c106cde.pth
+Traceback (most recent call last):
+  File "/home/eeiith/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/experiment/backbone_classifier/train_resnet.py", line 151, in <module>
+    output, feature = model(tgt_valid_dataloader, config.norm_flag)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eeiith/miniconda3/envs/KG/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1527, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eeiith/miniconda3/envs/KG/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1536, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eeiith/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/experiment/backbone_classifier/train_resnet.py", line 44, in forward
+    x = self.backbone(x)
+        ^^^^^^^^^^^^^^^^
+  File "/home/eeiith/miniconda3/envs/KG/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1527, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eeiith/miniconda3/envs/KG/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1536, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eeiith/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/experiment/backbone_classifier/../../models/DGFAS.py", line 160, in forward
+    feature = self.conv1(input)
+              ^^^^^^^^^^^^^^^^^
+  File "/home/eeiith/miniconda3/envs/KG/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1527, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eeiith/miniconda3/envs/KG/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1536, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eeiith/miniconda3/envs/KG/lib/python3.12/site-packages/torch/nn/modules/conv.py", line 460, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eeiith/miniconda3/envs/KG/lib/python3.12/site-packages/torch/nn/modules/conv.py", line 456, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: conv2d() received an invalid combination of arguments - got (DataLoader, Parameter, NoneType, tuple, tuple, tuple, int), but expected one of:
+ * (Tensor input, Tensor weight, Tensor bias, tuple of ints stride, tuple of ints padding, tuple of ints dilation, int groups)
+      didn't match because some of the arguments have invalid types: ([31;1mDataLoader[0m, [31;1mParameter[0m, [31;1mNoneType[0m, [31;1mtuple of (int, int)[0m, [31;1mtuple of (int, int)[0m, [31;1mtuple of (int, int)[0m, [32;1mint[0m)
+ * (Tensor input, Tensor weight, Tensor bias, tuple of ints stride, str padding, tuple of ints dilation, int groups)
+      didn't match because some of the arguments have invalid types: ([31;1mDataLoader[0m, [31;1mParameter[0m, [31;1mNoneType[0m, [31;1mtuple of (int, int)[0m, [31;1mtuple of (int, int)[0m, [31;1mtuple of (int, int)[0m, [32;1mint[0m)
+
+(KG) [01;32meeiith@eeiith[00m:[01;34m~/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/experiment/backbone_classifier[00m$ 
+[K(KG) [01;32meeiith@eeiith[00m:[01;34m~/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/experiment/backbone_classifier[00m$ 
+[K(KG) [01;32meeiith@eeiith[00m:[01;34m~/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/experiment/backbone_classifier[00m$ 
+[K(KG) [01;32meeiith@eeiith[00m:[01;34m~/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/experiment/backbone_classifier[00m$ pty[K[Kyton[K[Khon3 
+[K(KG) [01;32meeiith@eeiith[00m:[01;34m~/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/experiment/backbone_classifier[00m$ python3 train_resnet.py 
+Load Source Data
+Source Data:  lcc_fasd
+label_path:  ../../data_label/lcc_fasd/fake_label_crop.json
+save_label_path:  ../../data_label/lcc_fasd/choose_fake_label_crop.json
+Total video number(fake):  14756 lcc_fasd
+label_path:  ../../data_label/lcc_fasd/real_label_crop.json
+save_label_path:  ../../data_label/lcc_fasd/choose_real_label_crop.json
+Total video number(real):  1625 lcc_fasd
+Source Data:  replay_attack
+label_path:  ../../data_label/replay_attack/fake_label_crop.json
+save_label_path:  ../../data_label/replay_attack/choose_fake_label_crop.json
+Total video number(fake):  9000 replay_attack
+label_path:  ../../data_label/replay_attack/real_label_crop.json
+save_label_path:  ../../data_label/replay_attack/choose_real_label_crop.json
+Total video number(real):  3000 replay_attack
+Load Target Data
+Target Data:  nuaa
+label_path:  ../../data_label/nuaa/test_label_crop.json
+save_label_path:  ../../data_label/nuaa/choose_test_label_crop.json
+Total video number(test):  9123 nuaa
+loading model:  /home/eeiith/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/pretrained_model/resnet18-5c106cde.pth
+Traceback (most recent call last):
+  File "/home/eeiith/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/experiment/backbone_classifier/train_resnet.py", line 138, in <module>
+    valid_args = eval2(tgt_valid_dataloader, model, config.norm_flag)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eeiith/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/experiment/backbone_classifier/../../utils/evaluate.py", line 138, in eval2
+    acc_valid = accuracy(avg_single_video_output, avg_single_video_target, topk=(1,))
+                ^^^^^^^^
+UnboundLocalError: cannot access local variable 'accuracy' where it is not associated with a value
+(KG) [01;32meeiith@eeiith[00m:[01;34m~/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/experiment/backbone_classifier[00m$ 
+[K(KG) [01;32meeiith@eeiith[00m:[01;34m~/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/experiment/backbone_classifier[00m$ python3 train_resnet.py 
+Load Source Data
+Source Data:  lcc_fasd
+label_path:  ../../data_label/lcc_fasd/fake_label_crop.json
+save_label_path:  ../../data_label/lcc_fasd/choose_fake_label_crop.json
+Total video number(fake):  14756 lcc_fasd
+label_path:  ../../data_label/lcc_fasd/real_label_crop.json
+save_label_path:  ../../data_label/lcc_fasd/choose_real_label_crop.json
+Total video number(real):  1625 lcc_fasd
+Source Data:  replay_attack
+label_path:  ../../data_label/replay_attack/fake_label_crop.json
+save_label_path:  ../../data_label/replay_attack/choose_fake_label_crop.json
+Total video number(fake):  9000 replay_attack
+label_path:  ../../data_label/replay_attack/real_label_crop.json
+save_label_path:  ../../data_label/replay_attack/choose_real_label_crop.json
+Total video number(real):  3000 replay_attack
+Load Target Data
+Target Data:  nuaa
+label_path:  ../../data_label/nuaa/test_label_crop.json
+save_label_path:  ../../data_label/nuaa/choose_test_label_crop.json
+Total video number(test):  9123 nuaa
+loading model:  /home/eeiith/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/pretrained_model/resnet18-5c106cde.pth
+Traceback (most recent call last):
+  File "/home/eeiith/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/experiment/backbone_classifier/train_resnet.py", line 151, in <module>
+    output, feature = model(tgt_valid_dataloader.dataset, config.norm_flag)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eeiith/miniconda3/envs/KG/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1527, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eeiith/miniconda3/envs/KG/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1536, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eeiith/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/experiment/backbone_classifier/train_resnet.py", line 44, in forward
+    x = self.backbone(x)
+        ^^^^^^^^^^^^^^^^
+  File "/home/eeiith/miniconda3/envs/KG/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1527, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eeiith/miniconda3/envs/KG/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1536, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eeiith/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/experiment/backbone_classifier/../../models/DGFAS.py", line 160, in forward
+    feature = self.conv1(input)
+              ^^^^^^^^^^^^^^^^^
+  File "/home/eeiith/miniconda3/envs/KG/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1527, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eeiith/miniconda3/envs/KG/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1536, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eeiith/miniconda3/envs/KG/lib/python3.12/site-packages/torch/nn/modules/conv.py", line 460, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eeiith/miniconda3/envs/KG/lib/python3.12/site-packages/torch/nn/modules/conv.py", line 456, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: conv2d() received an invalid combination of arguments - got (YunpeiDataset, Parameter, NoneType, tuple, tuple, tuple, int), but expected one of:
+ * (Tensor input, Tensor weight, Tensor bias, tuple of ints stride, tuple of ints padding, tuple of ints dilation, int groups)
+      didn't match because some of the arguments have invalid types: ([31;1mYunpeiDataset[0m, [31;1mParameter[0m, [31;1mNoneType[0m, [31;1mtuple of (int, int)[0m, [31;1mtuple of (int, int)[0m, [31;1mtuple of (int, int)[0m, [32;1mint[0m)
+ * (Tensor input, Tensor weight, Tensor bias, tuple of ints stride, str padding, tuple of ints dilation, int groups)
+      didn't match because some of the arguments have invalid types: ([31;1mYunpeiDataset[0m, [31;1mParameter[0m, [31;1mNoneType[0m, [31;1mtuple of (int, int)[0m, [31;1mtuple of (int, int)[0m, [31;1mtuple of (int, int)[0m, [32;1mint[0m)
+
+(KG) [01;32meeiith@eeiith[00m:[01;34m~/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/experiment/backbone_classifier[00m$ python3 train_resnet.py 
+Load Source Data
+Source Data:  lcc_fasd
+label_path:  ../../data_label/lcc_fasd/fake_label_crop.json
+save_label_path:  ../../data_label/lcc_fasd/choose_fake_label_crop.json
+Total video number(fake):  14756 lcc_fasd
+label_path:  ../../data_label/lcc_fasd/real_label_crop.json
+save_label_path:  ../../data_label/lcc_fasd/choose_real_label_crop.json
+Total video number(real):  1625 lcc_fasd
+Source Data:  replay_attack
+label_path:  ../../data_label/replay_attack/fake_label_crop.json
+save_label_path:  ../../data_label/replay_attack/choose_fake_label_crop.json
+Total video number(fake):  9000 replay_attack
+label_path:  ../../data_label/replay_attack/real_label_crop.json
+save_label_path:  ../../data_label/replay_attack/choose_real_label_crop.json
+Total video number(real):  3000 replay_attack
+Load Target Data
+Target Data:  nuaa
+label_path:  ../../data_label/nuaa/test_label_crop.json
+save_label_path:  ../../data_label/nuaa/choose_test_label_crop.json
+Total video number(test):  9123 nuaa
+loading model:  /home/eeiith/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/pretrained_model/resnet18-5c106cde.pth
+Epoch: 1, Loss: 0.6903, Accuracy: 58.1826, EER: 0.2111, HTER: 0.2111, AUC: 0.9259, Threshold: 0.5180, ACC_threshold: 79.1667
+Epoch: 2, Loss: 0.6583, Accuracy: 76.8388, EER: 0.1222, HTER: 0.1222, AUC: 0.9111, Threshold: 0.5036, ACC_threshold: 87.5000
+Epoch: 3, Loss: 0.6203, Accuracy: 65.9542, EER: 0.3333, HTER: 0.1222, AUC: 0.7037, Threshold: 0.4436, ACC_threshold: 66.6667
+Epoch: 4, Loss: 0.7694, Accuracy: 38.2659, EER: 0.2444, HTER: 0.1222, AUC: 0.8519, Threshold: 0.6127, ACC_threshold: 75.0000
+Epoch: 5, Loss: 0.6111, Accuracy: 64.6717, EER: 0.4556, HTER: 0.1222, AUC: 0.5778, Threshold: 0.4419, ACC_threshold: 54.1667
+Epoch: 6, Loss: 0.6124, Accuracy: 63.1481, EER: 0.4556, HTER: 0.1222, AUC: 0.4889, Threshold: 0.1719, ACC_threshold: 54.1667
+Epoch: 7, Loss: 0.9829, Accuracy: 36.9396, EER: 0.4222, HTER: 0.1222, AUC: 0.6370, Threshold: 0.7332, ACC_threshold: 58.3333
+Epoch: 8, Loss: 0.5576, Accuracy: 63.2139, EER: 0.4556, HTER: 0.1222, AUC: 0.5333, Threshold: 0.2645, ACC_threshold: 54.1667
+Epoch: 9, Loss: 0.5928, Accuracy: 62.6987, EER: 0.4556, HTER: 0.1222, AUC: 0.5333, Threshold: 0.4356, ACC_threshold: 54.1667
+Epoch: 10, Loss: 0.5769, Accuracy: 63.2029, EER: 0.5444, HTER: 0.1222, AUC: 0.4519, Threshold: 0.2095, ACC_threshold: 45.8333
+Epoch: 11, Loss: 0.5776, Accuracy: 63.1590, EER: 0.4556, HTER: 0.1222, AUC: 0.5185, Threshold: 0.1846, ACC_threshold: 54.1667
+Epoch: 12, Loss: 0.6263, Accuracy: 50.0712, EER: 0.4556, HTER: 0.1222, AUC: 0.4889, Threshold: 0.4969, ACC_threshold: 54.1667
+Epoch: 13, Loss: 0.5618, Accuracy: 65.0992, EER: 0.4556, HTER: 0.1222, AUC: 0.4667, Threshold: 0.3457, ACC_threshold: 54.1667
+Epoch: 14, Loss: 0.5705, Accuracy: 64.2004, EER: 0.5444, HTER: 0.1222, AUC: 0.4222, Threshold: 0.3290, ACC_threshold: 45.8333
+Epoch: 15, Loss: 0.5981, Accuracy: 54.4667, EER: 0.5444, HTER: 0.1222, AUC: 0.4296, Threshold: 0.4263, ACC_threshold: 45.8333
+Epoch: 16, Loss: 0.6211, Accuracy: 64.0250, EER: 0.5778, HTER: 0.1222, AUC: 0.4148, Threshold: 0.1562, ACC_threshold: 41.6667
+Epoch: 17, Loss: 0.6047, Accuracy: 52.5047, EER: 0.5444, HTER: 0.1222, AUC: 0.4222, Threshold: 0.4094, ACC_threshold: 45.8333
+Epoch: 18, Loss: 0.8011, Accuracy: 33.0812, EER: 0.5444, HTER: 0.1222, AUC: 0.4370, Threshold: 0.6275, ACC_threshold: 45.8333
+Epoch: 19, Loss: 0.6243, Accuracy: 46.8048, EER: 0.5444, HTER: 0.1222, AUC: 0.4444, Threshold: 0.4440, ACC_threshold: 45.8333
+Epoch: 20, Loss: 0.6826, Accuracy: 42.8039, EER: 0.4556, HTER: 0.1222, AUC: 0.4741, Threshold: 0.5635, ACC_threshold: 54.1667
+Epoch: 21, Loss: 0.5804, Accuracy: 65.4171, EER: 0.4556, HTER: 0.1222, AUC: 0.4667, Threshold: 0.2148, ACC_threshold: 54.1667
+Epoch: 22, Loss: 0.5795, Accuracy: 66.6557, EER: 0.5444, HTER: 0.1222, AUC: 0.4593, Threshold: 0.1848, ACC_threshold: 45.8333
+Epoch: 23, Loss: 0.6595, Accuracy: 44.7660, EER: 0.5444, HTER: 0.1222, AUC: 0.4370, Threshold: 0.4718, ACC_threshold: 45.8333
+Epoch: 24, Loss: 0.6902, Accuracy: 43.4397, EER: 0.4556, HTER: 0.1222, AUC: 0.4889, Threshold: 0.5744, ACC_threshold: 54.1667
+Epoch: 25, Loss: 0.6415, Accuracy: 57.8428, EER: 0.6667, HTER: 0.1222, AUC: 0.3926, Threshold: 0.2771, ACC_threshold: 33.3333
+Epoch: 26, Loss: 0.6944, Accuracy: 61.4162, EER: 0.6667, HTER: 0.1222, AUC: 0.3778, Threshold: 0.2323, ACC_threshold: 33.3333
+Epoch: 27, Loss: 0.6566, Accuracy: 54.5106, EER: 0.6667, HTER: 0.1222, AUC: 0.4000, Threshold: 0.3066, ACC_threshold: 33.3333
+Epoch: 28, Loss: 0.6949, Accuracy: 44.6564, EER: 0.5778, HTER: 0.1222, AUC: 0.4074, Threshold: 0.4280, ACC_threshold: 41.6667
+Epoch: 29, Loss: 0.8208, Accuracy: 38.3427, EER: 0.5778, HTER: 0.1222, AUC: 0.4074, Threshold: 0.5417, ACC_threshold: 41.6667
+Epoch: 30, Loss: 0.7063, Accuracy: 52.3293, EER: 0.6667, HTER: 0.1222, AUC: 0.3778, Threshold: 0.3192, ACC_threshold: 33.3333
+Epoch: 31, Loss: 0.7686, Accuracy: 38.4413, EER: 0.5778, HTER: 0.1222, AUC: 0.4074, Threshold: 0.5330, ACC_threshold: 41.6667
+Epoch: 32, Loss: 0.8091, Accuracy: 56.5713, EER: 0.6667, HTER: 0.1222, AUC: 0.3481, Threshold: 0.2815, ACC_threshold: 33.3333
+Epoch: 33, Loss: 0.8438, Accuracy: 47.8351, EER: 0.6667, HTER: 0.1222, AUC: 0.3481, Threshold: 0.3720, ACC_threshold: 33.3333
+Epoch: 34, Loss: 0.9405, Accuracy: 36.4573, EER: 0.6667, HTER: 0.1222, AUC: 0.3556, Threshold: 0.4727, ACC_threshold: 33.3333
+Epoch: 35, Loss: 1.0122, Accuracy: 40.4143, EER: 0.6667, HTER: 0.1222, AUC: 0.3481, Threshold: 0.4218, ACC_threshold: 33.3333
+Epoch: 36, Loss: 0.9811, Accuracy: 33.6074, EER: 0.6667, HTER: 0.1222, AUC: 0.3852, Threshold: 0.5293, ACC_threshold: 33.3333
+Epoch: 37, Loss: 0.8563, Accuracy: 39.8772, EER: 0.6667, HTER: 0.1222, AUC: 0.3556, Threshold: 0.4711, ACC_threshold: 33.3333
+Epoch: 38, Loss: 1.0617, Accuracy: 30.2532, EER: 0.6667, HTER: 0.1222, AUC: 0.3556, Threshold: 0.5710, ACC_threshold: 33.3333
+Epoch: 39, Loss: 1.0409, Accuracy: 45.1496, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.3631, ACC_threshold: 33.3333
+Epoch: 40, Loss: 1.4058, Accuracy: 26.3181, EER: 0.5444, HTER: 0.1222, AUC: 0.4296, Threshold: 0.7896, ACC_threshold: 45.8333
+Epoch: 41, Loss: 0.9799, Accuracy: 35.8106, EER: 0.6667, HTER: 0.1222, AUC: 0.4074, Threshold: 0.5814, ACC_threshold: 33.3333
+Epoch: 42, Loss: 1.1318, Accuracy: 45.4565, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.3488, ACC_threshold: 33.3333
+Epoch: 43, Loss: 0.9365, Accuracy: 35.3064, EER: 0.6667, HTER: 0.1222, AUC: 0.3778, Threshold: 0.5134, ACC_threshold: 33.3333
+Epoch: 44, Loss: 0.9659, Accuracy: 45.7635, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.3410, ACC_threshold: 33.3333
+Epoch: 45, Loss: 1.2298, Accuracy: 30.7026, EER: 0.5444, HTER: 0.1222, AUC: 0.4370, Threshold: 0.7336, ACC_threshold: 45.8333
+Epoch: 46, Loss: 1.1195, Accuracy: 34.8898, EER: 0.6667, HTER: 0.1222, AUC: 0.3481, Threshold: 0.5199, ACC_threshold: 33.3333
+Epoch: 47, Loss: 0.9265, Accuracy: 37.8713, EER: 0.4556, HTER: 0.1222, AUC: 0.5704, Threshold: 0.7046, ACC_threshold: 54.1667
+Epoch: 48, Loss: 0.9594, Accuracy: 41.9051, EER: 0.6667, HTER: 0.1222, AUC: 0.3630, Threshold: 0.4287, ACC_threshold: 33.3333
+Epoch: 49, Loss: 0.9907, Accuracy: 53.4583, EER: 0.6667, HTER: 0.1222, AUC: 0.3481, Threshold: 0.2615, ACC_threshold: 33.3333
+Epoch: 50, Loss: 0.9642, Accuracy: 49.6218, EER: 0.6667, HTER: 0.1222, AUC: 0.3630, Threshold: 0.2988, ACC_threshold: 33.3333
+Epoch: 51, Loss: 1.1071, Accuracy: 49.2272, EER: 0.6667, HTER: 0.1222, AUC: 0.3407, Threshold: 0.3029, ACC_threshold: 33.3333
+Epoch: 52, Loss: 1.0477, Accuracy: 49.6328, EER: 0.6667, HTER: 0.1222, AUC: 0.3407, Threshold: 0.3047, ACC_threshold: 33.3333
+Epoch: 53, Loss: 0.7899, Accuracy: 46.1800, EER: 0.6667, HTER: 0.1222, AUC: 0.3630, Threshold: 0.3539, ACC_threshold: 33.3333
+Epoch: 54, Loss: 1.1405, Accuracy: 45.1606, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.3513, ACC_threshold: 33.3333
+Epoch: 55, Loss: 0.7775, Accuracy: 55.7273, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.2464, ACC_threshold: 33.3333
+Epoch: 56, Loss: 0.9854, Accuracy: 44.7550, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.3724, ACC_threshold: 33.3333
+Epoch: 57, Loss: 1.0678, Accuracy: 52.9431, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.2522, ACC_threshold: 33.3333
+Epoch: 58, Loss: 1.0577, Accuracy: 48.9422, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.3392, ACC_threshold: 33.3333
+Epoch: 59, Loss: 1.2173, Accuracy: 49.5451, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.2540, ACC_threshold: 33.3333
+Epoch: 60, Loss: 1.2316, Accuracy: 41.2255, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.3984, ACC_threshold: 33.3333
+Epoch: 61, Loss: 1.0219, Accuracy: 39.5484, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.4416, ACC_threshold: 33.3333
+Epoch: 62, Loss: 1.4337, Accuracy: 33.4101, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.5343, ACC_threshold: 33.3333
+Epoch: 63, Loss: 1.1460, Accuracy: 34.6487, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.5228, ACC_threshold: 33.3333
+Epoch: 64, Loss: 1.0633, Accuracy: 35.6900, EER: 0.6667, HTER: 0.1222, AUC: 0.3407, Threshold: 0.5028, ACC_threshold: 33.3333
+Epoch: 65, Loss: 0.9299, Accuracy: 37.6521, EER: 0.5444, HTER: 0.1222, AUC: 0.4148, Threshold: 0.6201, ACC_threshold: 45.8333
+Epoch: 66, Loss: 0.7873, Accuracy: 48.0873, EER: 0.6667, HTER: 0.1222, AUC: 0.3778, Threshold: 0.3459, ACC_threshold: 33.3333
+Epoch: 67, Loss: 0.9200, Accuracy: 47.3200, EER: 0.6667, HTER: 0.1222, AUC: 0.3630, Threshold: 0.3444, ACC_threshold: 33.3333
+Epoch: 68, Loss: 1.0622, Accuracy: 56.4398, EER: 0.6667, HTER: 0.1222, AUC: 0.3481, Threshold: 0.1941, ACC_threshold: 33.3333
+Epoch: 69, Loss: 0.7322, Accuracy: 61.3943, EER: 0.5444, HTER: 0.1222, AUC: 0.4593, Threshold: 0.1902, ACC_threshold: 45.8333
+Epoch: 70, Loss: 1.4749, Accuracy: 62.0958, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.0731, ACC_threshold: 33.3333
+Epoch: 71, Loss: 1.3827, Accuracy: 57.6674, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.1238, ACC_threshold: 33.3333
+Epoch: 72, Loss: 1.3401, Accuracy: 48.5695, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.2725, ACC_threshold: 33.3333
+Epoch: 73, Loss: 1.2064, Accuracy: 36.9944, EER: 0.6667, HTER: 0.1222, AUC: 0.3481, Threshold: 0.4932, ACC_threshold: 33.3333
+Epoch: 74, Loss: 1.4529, Accuracy: 31.7878, EER: 0.6667, HTER: 0.1222, AUC: 0.3481, Threshold: 0.5508, ACC_threshold: 33.3333
+Epoch: 75, Loss: 0.7922, Accuracy: 50.0932, EER: 0.5444, HTER: 0.1222, AUC: 0.4370, Threshold: 0.3919, ACC_threshold: 45.8333
+Epoch: 76, Loss: 0.8373, Accuracy: 56.5603, EER: 0.5778, HTER: 0.1222, AUC: 0.4074, Threshold: 0.2106, ACC_threshold: 41.6667
+Epoch: 77, Loss: 0.9740, Accuracy: 53.6775, EER: 0.6667, HTER: 0.1222, AUC: 0.3481, Threshold: 0.2171, ACC_threshold: 33.3333
+Epoch: 78, Loss: 1.1923, Accuracy: 55.7054, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.1814, ACC_threshold: 33.3333
+Epoch: 79, Loss: 1.0339, Accuracy: 47.5611, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.3147, ACC_threshold: 33.3333
+Epoch: 80, Loss: 1.2402, Accuracy: 47.1007, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.3207, ACC_threshold: 33.3333
+Epoch: 81, Loss: 1.1644, Accuracy: 41.0939, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.3611, ACC_threshold: 33.3333
+Epoch: 82, Loss: 1.1694, Accuracy: 54.8175, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.2052, ACC_threshold: 33.3333
+Epoch: 83, Loss: 1.0535, Accuracy: 59.7501, EER: 0.6667, HTER: 0.1222, AUC: 0.3407, Threshold: 0.1487, ACC_threshold: 33.3333
+Epoch: 84, Loss: 0.7494, Accuracy: 50.5974, EER: 0.4556, HTER: 0.1222, AUC: 0.5111, Threshold: 0.4761, ACC_threshold: 54.1667
+Epoch: 85, Loss: 0.7951, Accuracy: 54.7408, EER: 0.6667, HTER: 0.1222, AUC: 0.4000, Threshold: 0.2360, ACC_threshold: 33.3333
+Epoch: 86, Loss: 0.8751, Accuracy: 55.8807, EER: 0.6667, HTER: 0.1222, AUC: 0.3852, Threshold: 0.2141, ACC_threshold: 33.3333
+Epoch: 87, Loss: 0.8474, Accuracy: 64.2881, EER: 0.5778, HTER: 0.1222, AUC: 0.4148, Threshold: 0.1134, ACC_threshold: 41.6667
+Epoch: 88, Loss: 0.8045, Accuracy: 64.0908, EER: 0.6667, HTER: 0.1222, AUC: 0.3926, Threshold: 0.1144, ACC_threshold: 33.3333
+Epoch: 89, Loss: 0.5779, Accuracy: 56.7796, EER: 0.4556, HTER: 0.1222, AUC: 0.5407, Threshold: 0.3465, ACC_threshold: 54.1667
+Epoch: 90, Loss: 0.9146, Accuracy: 65.8336, EER: 0.6667, HTER: 0.1222, AUC: 0.3926, Threshold: 0.0810, ACC_threshold: 33.3333
+Epoch: 91, Loss: 0.6189, Accuracy: 60.8791, EER: 0.5778, HTER: 0.1222, AUC: 0.4593, Threshold: 0.1858, ACC_threshold: 41.6667
+Epoch: 92, Loss: 0.7580, Accuracy: 61.7341, EER: 0.6667, HTER: 0.1222, AUC: 0.3778, Threshold: 0.1552, ACC_threshold: 33.3333
+Epoch: 93, Loss: 0.6520, Accuracy: 56.1548, EER: 0.6667, HTER: 0.1222, AUC: 0.3926, Threshold: 0.2386, ACC_threshold: 33.3333
+Epoch: 94, Loss: 0.7048, Accuracy: 64.4854, EER: 0.6667, HTER: 0.1222, AUC: 0.3926, Threshold: 0.1286, ACC_threshold: 33.3333
+Epoch: 95, Loss: 0.9943, Accuracy: 57.4153, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.1871, ACC_threshold: 33.3333
+Epoch: 96, Loss: 0.9165, Accuracy: 55.7382, EER: 0.6667, HTER: 0.1222, AUC: 0.3407, Threshold: 0.2082, ACC_threshold: 33.3333
+Epoch: 97, Loss: 1.0677, Accuracy: 54.2475, EER: 0.6667, HTER: 0.1222, AUC: 0.3407, Threshold: 0.2345, ACC_threshold: 33.3333
+Epoch: 98, Loss: 0.5994, Accuracy: 54.1379, EER: 0.4556, HTER: 0.1222, AUC: 0.5333, Threshold: 0.3807, ACC_threshold: 54.1667
+Epoch: 99, Loss: 0.7197, Accuracy: 50.8495, EER: 0.4556, HTER: 0.1222, AUC: 0.4815, Threshold: 0.4491, ACC_threshold: 54.1667
+Epoch: 100, Loss: 0.7479, Accuracy: 63.2139, EER: 0.5444, HTER: 0.1222, AUC: 0.4222, Threshold: 0.1234, ACC_threshold: 45.8333
+Epoch: 101, Loss: 0.5245, Accuracy: 59.0595, EER: 0.4556, HTER: 0.1222, AUC: 0.5407, Threshold: 0.3531, ACC_threshold: 54.1667
+Epoch: 102, Loss: 1.0217, Accuracy: 59.4541, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.1277, ACC_threshold: 33.3333
+Epoch: 103, Loss: 1.0616, Accuracy: 57.4372, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.1369, ACC_threshold: 33.3333
+Epoch: 104, Loss: 1.0327, Accuracy: 60.3201, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.1306, ACC_threshold: 33.3333
+Epoch: 105, Loss: 0.9751, Accuracy: 55.2340, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.1997, ACC_threshold: 33.3333
+Epoch: 106, Loss: 0.9156, Accuracy: 44.0973, EER: 0.6667, HTER: 0.1222, AUC: 0.3481, Threshold: 0.3586, ACC_threshold: 33.3333
+Epoch: 107, Loss: 0.9089, Accuracy: 40.7103, EER: 0.5444, HTER: 0.1222, AUC: 0.4667, Threshold: 0.6266, ACC_threshold: 45.8333
+Epoch: 108, Loss: 0.9270, Accuracy: 47.6488, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.3146, ACC_threshold: 33.3333
+Epoch: 109, Loss: 0.9869, Accuracy: 51.5729, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.2758, ACC_threshold: 33.3333
+Epoch: 110, Loss: 1.0752, Accuracy: 53.3816, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.2537, ACC_threshold: 33.3333
+Epoch: 111, Loss: 0.9012, Accuracy: 49.0080, EER: 0.6667, HTER: 0.1222, AUC: 0.3630, Threshold: 0.3202, ACC_threshold: 33.3333
+Epoch: 112, Loss: 0.8495, Accuracy: 53.1843, EER: 0.6667, HTER: 0.1222, AUC: 0.3778, Threshold: 0.2662, ACC_threshold: 33.3333
+Epoch: 113, Loss: 0.9143, Accuracy: 55.5081, EER: 0.6667, HTER: 0.1222, AUC: 0.3481, Threshold: 0.2176, ACC_threshold: 33.3333
+Epoch: 114, Loss: 0.8417, Accuracy: 52.5814, EER: 0.6667, HTER: 0.1222, AUC: 0.3407, Threshold: 0.2762, ACC_threshold: 33.3333
+Epoch: 115, Loss: 1.1476, Accuracy: 52.2525, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.2488, ACC_threshold: 33.3333
+Epoch: 116, Loss: 1.1358, Accuracy: 47.8242, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.3115, ACC_threshold: 33.3333
+Epoch: 117, Loss: 1.1101, Accuracy: 37.3671, EER: 0.5444, HTER: 0.1222, AUC: 0.4148, Threshold: 0.6188, ACC_threshold: 45.8333
+Epoch: 118, Loss: 0.9952, Accuracy: 54.3023, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.2407, ACC_threshold: 33.3333
+Epoch: 119, Loss: 0.9514, Accuracy: 43.2752, EER: 0.6667, HTER: 0.1222, AUC: 0.3556, Threshold: 0.3719, ACC_threshold: 33.3333
+Epoch: 120, Loss: 1.0731, Accuracy: 35.9312, EER: 0.5444, HTER: 0.1222, AUC: 0.4000, Threshold: 0.5569, ACC_threshold: 45.8333
+Epoch: 121, Loss: 1.0101, Accuracy: 37.8275, EER: 0.6667, HTER: 0.1222, AUC: 0.3630, Threshold: 0.4878, ACC_threshold: 33.3333
+Epoch: 122, Loss: 0.7539, Accuracy: 51.9456, EER: 0.6667, HTER: 0.1222, AUC: 0.3630, Threshold: 0.2952, ACC_threshold: 33.3333
+Epoch: 123, Loss: 1.0157, Accuracy: 56.2205, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.1658, ACC_threshold: 33.3333
+Epoch: 124, Loss: 1.1939, Accuracy: 38.0577, EER: 0.4556, HTER: 0.1222, AUC: 0.5556, Threshold: 0.7631, ACC_threshold: 54.1667
+Epoch: 125, Loss: 0.6964, Accuracy: 55.3546, EER: 0.5778, HTER: 0.1222, AUC: 0.3926, Threshold: 0.2306, ACC_threshold: 41.6667
+Epoch: 126, Loss: 0.8248, Accuracy: 43.5383, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.3738, ACC_threshold: 33.3333
+Epoch: 127, Loss: 0.7920, Accuracy: 42.9793, EER: 0.5444, HTER: 0.1222, AUC: 0.4519, Threshold: 0.5398, ACC_threshold: 45.8333
+Epoch: 128, Loss: 1.0238, Accuracy: 62.6000, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.1296, ACC_threshold: 33.3333
+Epoch: 129, Loss: 0.8624, Accuracy: 57.7222, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.1693, ACC_threshold: 33.3333
+Epoch: 130, Loss: 0.9174, Accuracy: 60.8133, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.1072, ACC_threshold: 33.3333
+Epoch: 131, Loss: 0.8800, Accuracy: 47.3090, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.3219, ACC_threshold: 33.3333
+Epoch: 132, Loss: 0.8327, Accuracy: 44.3056, EER: 0.6667, HTER: 0.1222, AUC: 0.3481, Threshold: 0.3448, ACC_threshold: 33.3333
+Epoch: 133, Loss: 1.1275, Accuracy: 51.6168, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.2166, ACC_threshold: 33.3333
+Epoch: 134, Loss: 0.8844, Accuracy: 53.5350, EER: 0.6667, HTER: 0.1222, AUC: 0.3407, Threshold: 0.2354, ACC_threshold: 33.3333
+Epoch: 135, Loss: 0.8696, Accuracy: 49.9397, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.2955, ACC_threshold: 33.3333
+Epoch: 136, Loss: 0.8643, Accuracy: 48.1969, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.3057, ACC_threshold: 33.3333
+Epoch: 137, Loss: 1.0383, Accuracy: 43.8123, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.3614, ACC_threshold: 33.3333
+Epoch: 138, Loss: 1.1818, Accuracy: 33.3772, EER: 0.5778, HTER: 0.1222, AUC: 0.4000, Threshold: 0.7317, ACC_threshold: 41.6667
+Epoch: 139, Loss: 0.8831, Accuracy: 42.8477, EER: 0.6667, HTER: 0.1222, AUC: 0.3407, Threshold: 0.3859, ACC_threshold: 33.3333
+Epoch: 140, Loss: 0.8595, Accuracy: 56.7138, EER: 0.6667, HTER: 0.1222, AUC: 0.3407, Threshold: 0.2078, ACC_threshold: 33.3333
+Epoch: 141, Loss: 1.0961, Accuracy: 60.2324, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.1347, ACC_threshold: 33.3333
+Epoch: 142, Loss: 1.4148, Accuracy: 57.9305, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.1097, ACC_threshold: 33.3333
+Epoch: 143, Loss: 0.7333, Accuracy: 45.9388, EER: 0.6667, HTER: 0.1222, AUC: 0.3778, Threshold: 0.4150, ACC_threshold: 33.3333
+Epoch: 144, Loss: 0.8099, Accuracy: 46.0813, EER: 0.5444, HTER: 0.1222, AUC: 0.3852, Threshold: 0.3848, ACC_threshold: 45.8333
+Epoch: 145, Loss: 0.9313, Accuracy: 54.0173, EER: 0.6667, HTER: 0.1222, AUC: 0.3407, Threshold: 0.1997, ACC_threshold: 33.3333
+Epoch: 146, Loss: 0.8779, Accuracy: 46.8815, EER: 0.6667, HTER: 0.1222, AUC: 0.3407, Threshold: 0.3344, ACC_threshold: 33.3333
+Epoch: 147, Loss: 0.7765, Accuracy: 47.1665, EER: 0.6667, HTER: 0.1222, AUC: 0.3556, Threshold: 0.3239, ACC_threshold: 33.3333
+Epoch: 148, Loss: 0.6851, Accuracy: 47.8680, EER: 0.6667, HTER: 0.1222, AUC: 0.3778, Threshold: 0.4010, ACC_threshold: 33.3333
+Epoch: 149, Loss: 0.9270, Accuracy: 42.0147, EER: 0.6667, HTER: 0.1222, AUC: 0.3407, Threshold: 0.4131, ACC_threshold: 33.3333
+Epoch: 150, Loss: 1.3308, Accuracy: 48.9751, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.2521, ACC_threshold: 33.3333
+Epoch: 151, Loss: 1.2023, Accuracy: 46.3225, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.3088, ACC_threshold: 33.3333
+Epoch: 152, Loss: 1.7502, Accuracy: 31.2945, EER: 0.6667, HTER: 0.1222, AUC: 0.3704, Threshold: 0.7415, ACC_threshold: 33.3333
+Epoch: 153, Loss: 1.2460, Accuracy: 34.4514, EER: 0.6667, HTER: 0.1222, AUC: 0.3407, Threshold: 0.4937, ACC_threshold: 33.3333
+Epoch: 154, Loss: 1.0143, Accuracy: 38.7153, EER: 0.6667, HTER: 0.1222, AUC: 0.3556, Threshold: 0.4464, ACC_threshold: 33.3333
+Epoch: 155, Loss: 1.1966, Accuracy: 35.5585, EER: 0.6667, HTER: 0.1222, AUC: 0.3407, Threshold: 0.5102, ACC_threshold: 33.3333
+Epoch: 156, Loss: 1.1771, Accuracy: 39.7567, EER: 0.5778, HTER: 0.1222, AUC: 0.4222, Threshold: 0.7299, ACC_threshold: 41.6667
+Epoch: 157, Loss: 0.7956, Accuracy: 56.2425, EER: 0.6667, HTER: 0.1222, AUC: 0.3630, Threshold: 0.1821, ACC_threshold: 33.3333
+Epoch: 158, Loss: 0.6879, Accuracy: 52.6800, EER: 0.6667, HTER: 0.1222, AUC: 0.3630, Threshold: 0.2724, ACC_threshold: 33.3333
+Epoch: 159, Loss: 0.7756, Accuracy: 52.9541, EER: 0.6667, HTER: 0.1222, AUC: 0.3704, Threshold: 0.2381, ACC_threshold: 33.3333
+Epoch: 160, Loss: 0.7836, Accuracy: 57.8757, EER: 0.6667, HTER: 0.1222, AUC: 0.3630, Threshold: 0.1934, ACC_threshold: 33.3333
+Epoch: 161, Loss: 1.1036, Accuracy: 54.7298, EER: 0.6667, HTER: 0.1222, AUC: 0.3333, Threshold: 0.2223, ACC_threshold: 33.3333
+Epoch: 162, Loss: 0.9122, Accuracy: 46.3115, EER: 0.6667, HTER: 0.1222, AUC: 0.3556, Threshold: 0.3681, ACC_threshold: 33.3333
+Epoch: 163, Loss: 0.7452, Accuracy: 49.3149, EER: 0.5778, HTER: 0.1222, AUC: 0.3852, Threshold: 0.3838, ACC_threshold: 41.6667
+Epoch: 164, Loss: 0.8024, Accuracy: 50.0384, EER: 0.6667, HTER: 0.1222, AUC: 0.3704, Threshold: 0.3081, ACC_threshold: 33.3333
+Epoch: 165, Loss: 0.4281, Accuracy: 61.3724, EER: 0.5444, HTER: 0.1222, AUC: 0.5778, Threshold: 0.2544, ACC_threshold: 45.8333
+Epoch: 166, Loss: 0.8593, Accuracy: 61.1202, EER: 0.5778, HTER: 0.1222, AUC: 0.4000, Threshold: 0.1331, ACC_threshold: 41.6667
+Epoch: 167, Loss: 0.7086, Accuracy: 61.7012, EER: 0.5444, HTER: 0.1222, AUC: 0.4370, Threshold: 0.1581, ACC_threshold: 45.8333
+Epoch: 168, Loss: 0.7958, Accuracy: 62.9617, EER: 0.5444, HTER: 0.1222, AUC: 0.4148, Threshold: 0.1353, ACC_threshold: 45.8333
+Epoch: 169, Loss: 0.9399, Accuracy: 63.7290, EER: 0.5444, HTER: 0.1222, AUC: 0.4296, Threshold: 0.1176, ACC_threshold: 45.8333
+Epoch: 170, Loss: 0.7194, Accuracy: 62.0191, EER: 0.5444, HTER: 0.1222, AUC: 0.4741, Threshold: 0.1255, ACC_threshold: 45.8333
+Epoch: 171, Loss: 0.4798, Accuracy: 60.1337, EER: 0.5444, HTER: 0.1222, AUC: 0.5704, Threshold: 0.2085, ACC_threshold: 45.8333
+Epoch: 172, Loss: 0.4006, Accuracy: 63.0385, EER: 0.4222, HTER: 0.1222, AUC: 0.7185, Threshold: 0.3034, ACC_threshold: 58.3333
+Epoch: 173, Loss: 0.3455, Accuracy: 66.1734, EER: 0.3333, HTER: 0.1222, AUC: 0.7185, Threshold: 0.2232, ACC_threshold: 66.6667
+Epoch: 174, Loss: 0.3907, Accuracy: 68.2561, EER: 0.4222, HTER: 0.1222, AUC: 0.6815, Threshold: 0.1292, ACC_threshold: 58.3333
+Epoch: 175, Loss: 1.1577, Accuracy: 63.2577, EER: 0.6667, HTER: 0.1222, AUC: 0.3630, Threshold: 0.0967, ACC_threshold: 33.3333
+Epoch: 176, Loss: 0.5613, Accuracy: 58.4566, EER: 0.5444, HTER: 0.1222, AUC: 0.4741, Threshold: 0.2700, ACC_threshold: 45.8333
+Epoch: 177, Loss: 0.5480, Accuracy: 54.3023, EER: 0.5444, HTER: 0.1222, AUC: 0.5185, Threshold: 0.3721, ACC_threshold: 45.8333
+Epoch: 178, Loss: 0.6901, Accuracy: 59.8597, EER: 0.5444, HTER: 0.1222, AUC: 0.4074, Threshold: 0.1846, ACC_threshold: 45.8333
+Epoch: 179, Loss: 0.4743, Accuracy: 59.0814, EER: 0.5444, HTER: 0.1222, AUC: 0.5852, Threshold: 0.3050, ACC_threshold: 45.8333
+Epoch: 180, Loss: 0.4498, Accuracy: 61.1093, EER: 0.4556, HTER: 0.1222, AUC: 0.5556, Threshold: 0.2143, ACC_threshold: 54.1667
+Epoch: 181, Loss: 0.5141, Accuracy: 56.9330, EER: 0.5444, HTER: 0.1222, AUC: 0.4963, Threshold: 0.2716, ACC_threshold: 45.8333
+Epoch: 182, Loss: 0.5073, Accuracy: 57.1851, EER: 0.5444, HTER: 0.1222, AUC: 0.4889, Threshold: 0.3057, ACC_threshold: 45.8333
+Epoch: 183, Loss: 0.5089, Accuracy: 54.9271, EER: 0.5444, HTER: 0.1222, AUC: 0.5926, Threshold: 0.4263, ACC_threshold: 45.8333
+Epoch: 184, Loss: 0.6651, Accuracy: 52.7020, EER: 0.5444, HTER: 0.1222, AUC: 0.4000, Threshold: 0.3369, ACC_threshold: 45.8333
+Epoch: 185, Loss: 0.8547, Accuracy: 46.6294, EER: 0.5444, HTER: 0.1222, AUC: 0.3852, Threshold: 0.3803, ACC_threshold: 45.8333
+Epoch: 186, Loss: 1.3347, Accuracy: 41.2145, EER: 0.5444, HTER: 0.1222, AUC: 0.5185, Threshold: 0.7298, ACC_threshold: 45.8333
+Epoch: 187, Loss: 0.9009, Accuracy: 43.0451, EER: 0.6667, HTER: 0.1222, AUC: 0.3704, Threshold: 0.4299, ACC_threshold: 33.3333
+Epoch: 188, Loss: 1.0343, Accuracy: 60.7476, EER: 0.6667, HTER: 0.1222, AUC: 0.3481, Threshold: 0.1273, ACC_threshold: 33.3333
+Epoch: 189, Loss: 0.9017, Accuracy: 46.2567, EER: 0.5778, HTER: 0.1222, AUC: 0.3778, Threshold: 0.3949, ACC_threshold: 41.6667
+Epoch: 190, Loss: 1.2345, Accuracy: 39.2086, EER: 0.5444, HTER: 0.1222, AUC: 0.4741, Threshold: 0.7281, ACC_threshold: 45.8333
+Epoch: 191, Loss: 1.0073, Accuracy: 41.1487, EER: 0.5444, HTER: 0.1222, AUC: 0.4370, Threshold: 0.5933, ACC_threshold: 45.8333
+Epoch: 192, Loss: 0.8547, Accuracy: 46.4321, EER: 0.5444, HTER: 0.1222, AUC: 0.5259, Threshold: 0.5948, ACC_threshold: 45.8333
+Epoch: 193, Loss: 0.6374, Accuracy: 53.5131, EER: 0.6667, HTER: 0.1222, AUC: 0.3852, Threshold: 0.2928, ACC_threshold: 33.3333
+Epoch: 194, Loss: 0.7743, Accuracy: 56.8344, EER: 0.6667, HTER: 0.1222, AUC: 0.3556, Threshold: 0.1985, ACC_threshold: 33.3333
+Epoch: 195, Loss: 0.7641, Accuracy: 53.5898, EER: 0.6667, HTER: 0.1222, AUC: 0.3556, Threshold: 0.2357, ACC_threshold: 33.3333
+Epoch: 196, Loss: 0.6916, Accuracy: 58.4566, EER: 0.5444, HTER: 0.1222, AUC: 0.4074, Threshold: 0.2050, ACC_threshold: 45.8333
+Epoch: 197, Loss: 0.8384, Accuracy: 54.1379, EER: 0.6667, HTER: 0.1222, AUC: 0.3556, Threshold: 0.2232, ACC_threshold: 33.3333
+Epoch: 198, Loss: 0.4410, Accuracy: 60.0460, EER: 0.5444, HTER: 0.1222, AUC: 0.6519, Threshold: 0.4121, ACC_threshold: 45.8333
+Epoch: 199, Loss: 0.7833, Accuracy: 47.9667, EER: 0.6667, HTER: 0.1222, AUC: 0.3778, Threshold: 0.3154, ACC_threshold: 33.3333
+Epoch: 200, Loss: 0.7513, Accuracy: 54.5215, EER: 0.6667, HTER: 0.1222, AUC: 0.3704, Threshold: 0.2322, ACC_threshold: 33.3333
+(KG) [01;32meeiith@eeiith[00m:[01;34m~/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/experiment/backbone_classifier[00m$ 
+[K(KG) [01;32meeiith@eeiith[00m:[01;34m~/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/experiment/backbone_classifier[00m$ python3 train_resnet.py [7Pconda activate KGd ../[K/usr/bin/python2 /home/eeiith/.vscode-server/extensions/ms-python.python-2024.4.1/python_files/printEnvVariablesToFile.py /home/eeiith/.vscode-server/extensions/ms-python.python-2024.4.1/python_files/deactivate/bash/envVars.txt[A[A
+(KG) [01;32meeiith@eeiith[00m:[01;34m~/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/experiment/backbone_classifier[00m$ [23Ppython3 vae_gen.py 
+
+[K
+
+[K[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Pconda activate KGpython3 autoencoder.py [6Pconda activate KGpython3 autoencoder.py [6Pconda activate KGpython3 vae_gen.py /usr/bin/python2 /home/eeiith/.vscode-server/extensions/ms-python.python-2024.4.1/python_files/printEnvVariablesToFile.py /home/eeiith/.vscode-server/extensions/ms-python.python-2024.4.1/python_files/deactivate/bash/envVars.txt[A[A
+(KG) [01;32meeiith@eeiith[00m:[01;34m~/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/experiment/backbone_classifier[00m$ cd ../[K

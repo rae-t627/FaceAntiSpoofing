@@ -27,6 +27,7 @@ def test(test_dataloader, model, threshold):
     output_dict_tmp = {}
     target_dict_tmp = {}
     number = 0
+    
     with torch.no_grad():
         for iter, (input, target, videoID) in enumerate(test_dataloader):
             input = Variable(input).cuda()
@@ -35,6 +36,7 @@ def test(test_dataloader, model, threshold):
             prob = F.softmax(cls_out, dim=1).cpu().data.numpy()[:, 1]
             label = target.cpu().data.numpy()
             videoID = videoID.cpu().data.numpy()
+            
             for i in range(len(prob)):
                 if (videoID[i] in prob_dict.keys()):
                     prob_dict[videoID[i]].append(prob[i])
@@ -76,7 +78,6 @@ def test(test_dataloader, model, threshold):
         acc_valid = accuracy(avg_single_video_output, avg_single_video_target, topk=(1,))
         valid_top1.update(acc_valid[0])
         
-
     cur_EER_valid, threshold, FRR_list, FAR_list = get_EER_states(prob_list, label_list)
     ACC_threshold = calculate_threshold(prob_list, label_list, threshold)
     
@@ -94,9 +95,9 @@ def test(test_dataloader, model, threshold):
     plt.xlabel('False Positive Rate')
     plt.savefig(os.path.join(save_path_roc, 'roc.png'))
     
+    # calculate HTER
     y_pred_binary = [1 if pred >= 0.5 else 0 for pred in prob_list]
     conf_matrix = confusion_matrix(label_list, y_pred_binary)
-
     TN, FP, FN, TP = conf_matrix[0][0], conf_matrix[0][1], conf_matrix[1][0], conf_matrix[1][1]
 
     FAR = FP / (FP + TN)
@@ -114,7 +115,9 @@ def main():
     print("**Testing** Get test files done!")
     
     # load model
-    net_ = torch.load(config.best_model_path + config.tgt_best_model_name)
+    # net_ = torch.load(config.best_model_path + config.tgt_best_model_name)
+    print("Loaded checkpoint:", config.best_model_path + config.tgt_best_model_name)
+    net_ = torch.load('/home/eeiith/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/experiment/L_R_to_N/nuaa_checkpoint/LBP/best_model/model_best_0.12222_32.pth.tar')
     net.load_state_dict(net_["state_dict"])
     threshold = net_["threshold"]
     

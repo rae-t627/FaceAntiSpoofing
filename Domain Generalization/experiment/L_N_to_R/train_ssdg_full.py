@@ -27,7 +27,7 @@ torch.cuda.manual_seed(config.seed)
 os.environ["CUDA_VISIBLE_DEVICES"] = config.gpus
 torch.backends.cudnn.benchmark = False
 torch.backends.cudnn.deterministic = True
-device = 'cuda'    
+device = 'cuda'
 
 def train():
     mkdirs(config.checkpoint_path, config.best_model_path, config.logs)
@@ -114,6 +114,7 @@ def train():
         ad_net_real.train(True)
         optimizer.zero_grad()
         adjust_learning_rate(optimizer, epoch, init_param_lr, config.lr_epoch_1, config.lr_epoch_2)
+        
         ######### data prepare #########
         src1_img_real, src1_label_real = next(src1_train_iter_real)
         src1_img_real = src1_img_real.cuda()

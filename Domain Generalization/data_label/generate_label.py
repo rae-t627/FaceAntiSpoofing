@@ -100,9 +100,6 @@ def nuaa_process():
     client_test_file = '/home/eeiith/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/data_label/Dataset/NUAA/raw/client_test_raw.txt'
     imposter_train_file = '/home/eeiith/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/data_label/Dataset/NUAA/raw/imposter_train_raw.txt'
     imposter_test_file = '/home/eeiith/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/data_label/Dataset/NUAA/raw/imposter_test_raw.txt'
-    # client_test_file = os.path.join(dataset_path, 'client_test_face.txt')
-    # imposter_train_file = os.path.join(dataset_path, 'imposter_train_face.txt')
-    # imposter_test_file = os.path.join(dataset_path, 'imposter_test_face.txt')
     
     # Load train data
     with open(client_train_file, 'r') as f:
@@ -303,6 +300,7 @@ def replay_attack_process():
                             else:
                                 fake_final_json.append(dict)
                     cap.release()
+                    
     # Print statistics
     print('\nReplay Attack: ', len(all_final_json))
     print('Replay Attack(train): ', len(train_final_json))
@@ -415,6 +413,7 @@ def lcc_fasd_process_cropped():
     label_save_dir = './lcc_fasd/'
     if not os.path.exists(label_save_dir):
         os.makedirs(label_save_dir)
+        
     f_train = open(label_save_dir + 'train_label_crop.json', 'w')
     f_test = open(label_save_dir + 'test_label_crop.json', 'w')
     f_all = open(label_save_dir + 'all_label_crop.json', 'w')
@@ -431,12 +430,13 @@ def lcc_fasd_process_cropped():
     
     # Load train data
     train_real_files = glob.glob(train_real_path)
-    # print(train_real_files)
     train_fake_files = glob.glob(train_fake_path)
+    
     for file_path in train_real_files:
         train_final_json.append({'photo_path': file_path, 'photo_label': 1})
         all_final_json.append({'photo_path': file_path, 'photo_label': 1})
         real_final_json.append({'photo_path': file_path, 'photo_label': 1})
+        
     for file_path in train_fake_files:
         train_final_json.append({'photo_path': file_path, 'photo_label': 0})
         all_final_json.append({'photo_path': file_path, 'photo_label': 0})
@@ -445,10 +445,12 @@ def lcc_fasd_process_cropped():
     # Load test data
     test_real_files = glob.glob(test_real_path)
     test_fake_files = glob.glob(test_fake_path)
+    
     for file_path in test_real_files:
         test_final_json.append({'photo_path': file_path, 'photo_label': 1})
         all_final_json.append({'photo_path': file_path, 'photo_label': 1})
         real_final_json.append({'photo_path': file_path, 'photo_label': 1})
+        
     for file_path in test_fake_files:
         test_final_json.append({'photo_path': file_path, 'photo_label': 0})
         all_final_json.append({'photo_path': file_path, 'photo_label': 0})
@@ -498,9 +500,6 @@ def nuaa_process_cropped():
     client_test_file = '/home/eeiith/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/data_label/Dataset/NUAA/raw/client_test_raw.txt'
     imposter_train_file = '/home/eeiith/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/data_label/Dataset/NUAA/raw/imposter_train_raw.txt'
     imposter_test_file = '/home/eeiith/Desktop/Project1/Kaustubh/IVP/SSDG-CVPR2020/data_label/Dataset/NUAA/raw/imposter_test_raw.txt'
-    # client_test_file = os.path.join(dataset_path, 'client_test_face.txt')
-    # imposter_train_file = os.path.join(dataset_path, 'imposter_train_face.txt')
-    # imposter_test_file = os.path.join(dataset_path, 'imposter_test_face.txt')
     
     # Load train data
     with open(client_train_file, 'r') as f:
@@ -539,6 +538,7 @@ def nuaa_process_cropped():
         test_final_json.append({'photo_path': file_path, 'photo_label': 1})
         all_final_json.append({'photo_path': file_path, 'photo_label': 1})
         real_final_json.append({'photo_path': file_path, 'photo_label': 1})
+        
     for face in imposter_test_faces:
         file_path = os.path.join(dataset_path, 'ImposterFace', face)
         test_final_json.append({'photo_path': file_path, 'photo_label': 0})
@@ -581,57 +581,75 @@ def replay_attack_process_cropped():
     f_all = open(label_save_dir + 'all_label_crop.json', 'w')
     f_real = open(label_save_dir + 'real_label_crop.json', 'w')
     f_fake = open(label_save_dir + 'fake_label_crop.json', 'w')
+    
     # Open all_label.json file
     with open('./replay_attack/all_label.json', 'r') as f:
         replay_attack_data = json.load(f)
+        
     # Change the path to the cropped images
     for i in range(len(replay_attack_data)):
         replay_attack_data[i]['photo_path'] = replay_attack_data[i]['photo_path'].replace('frames', 'replay_attack_cropped')
+        
     # Save the cropped images to a new JSON file
     json.dump(replay_attack_data, f_all, indent=4)
     f_all.close()
+    
     # Open train_label.json file
     with open('./replay_attack/train_label.json', 'r') as f:
         replay_attack_data = json.load(f)
+        
     # Change the path to the cropped images
     for i in range(len(replay_attack_data)):
         replay_attack_data[i]['photo_path'] = replay_attack_data[i]['photo_path'].replace('frames', 'replay_attack_cropped')
+        
     # Save the cropped images to a new JSON file
     json.dump(replay_attack_data, f_train, indent=4)    
     f_train.close()
+    
     # Open valid_label.json file
     with open('./replay_attack/valid_label.json', 'r') as f:
         replay_attack_data = json.load(f)
+        
     # Change the path to the cropped images
     for i in range(len(replay_attack_data)):
         replay_attack_data[i]['photo_path'] = replay_attack_data[i]['photo_path'].replace('frames', 'replay_attack_cropped')
+        
     # Save the cropped images to a new JSON file
     json.dump(replay_attack_data, f_valid, indent=4)
     f_valid.close()
+    
     # Open test_label.json file
     with open('./replay_attack/test_label.json', 'r') as f:
         replay_attack_data = json.load(f)
+        
     # Change the path to the cropped images
     for i in range(len(replay_attack_data)):
         replay_attack_data[i]['photo_path'] = replay_attack_data[i]['photo_path'].replace('frames', 'replay_attack_cropped')
+        
     # Save the cropped images to a new JSON file
     json.dump(replay_attack_data, f_test, indent=4)
     f_test.close()
+    
     # Open real_label.json file
     with open('./replay_attack/real_label.json', 'r') as f:
         replay_attack_data = json.load(f)
+        
     # Change the path to the cropped images
     for i in range(len(replay_attack_data)):
         replay_attack_data[i]['photo_path'] = replay_attack_data[i]['photo_path'].replace('frames', 'replay_attack_cropped')
+        
     # Save the cropped images to a new JSON file
     json.dump(replay_attack_data, f_real, indent=4)
     f_real.close()
+    
     # Open fake_label.json file
     with open('./replay_attack/fake_label.json', 'r') as f:
         replay_attack_data = json.load(f)
+        
     # Change the path to the cropped images
     for i in range(len(replay_attack_data)):
         replay_attack_data[i]['photo_path'] = replay_attack_data[i]['photo_path'].replace('frames', 'replay_attack_cropped')
+        
     # Save the cropped images to a new JSON file
     json.dump(replay_attack_data, f_fake, indent=4)
     f_fake.close()

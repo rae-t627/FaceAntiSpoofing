@@ -106,6 +106,7 @@ def train():
             src2_train_iter_fake = iter(src2_train_dataloader_fake)
         if (iter_num != 0 and iter_num % iter_per_epoch == 0):
             epoch = epoch + 1
+            
         param_lr_tmp = []
         for param_group in optimizer.param_groups:
             param_lr_tmp.append(param_group["lr"])
@@ -197,7 +198,7 @@ def train():
             if (valid_args[3] <= best_model_HTER):
                 best_model_ACC = valid_args[6]
                 best_model_AUC = valid_args[4]
-
+            
             save_list = [epoch, valid_args, best_model_HTER, best_model_ACC, best_model_ACER, threshold]
             save_checkpoint(save_list, is_best, net, optimizer, config.gpus, config.checkpoint_path, config.best_model_path)
             print('\r', end='', flush=True)
@@ -215,23 +216,3 @@ def train():
 
 if __name__ == '__main__':
     train()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
