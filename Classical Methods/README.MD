@@ -1,6 +1,6 @@
 The Classical Methods implemented were done using:
-1) LBP.ipynb: Uses Multiscale Local Binary Patterns(LBP)
-2) iqm_fr.ipynb: Image Quality Assessment using 20 Full-Reference Image Quality Measures(FR-IQMs)
+1) LBP_data_generation.ipynb: Uses Multiscale Local Binary Patterns(LBP)
+2) IQM_color.ipynb: Image Quality Assessment using Image Quality Measures(IQMs)
 
 References:
 1) LBP: J. Määttä, A. Hadid and M. Pietikäinen, "Face spoofing detection from single images using micro-texture analysis," 2011 International Joint Conference on Biometrics (IJCB), Washington, DC, USA, 2011, pp. 1-7, doi: 10.1109/IJCB.2011.6117510.
